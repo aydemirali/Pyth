@@ -1,0 +1,22 @@
+#Problem 2
+#Kullanıcıdan 2 tane sayı alarak bu sayıların en büyük ortak bölenini
+#(EBOB) dönen bir tane fonksiyon yazın.
+#04.12.2018-Aksaray
+
+
+def ebob(sayi1,sayi2):
+    ebob=0
+    if(sayi1==0 or sayi2==0):
+        print("Lütfen Sıfırdan farklı bir sayı giriniz ")
+    else:
+        if(sayi1<sayi2):
+            sayi1,sayi2=sayi2,sayi1
+        for i in range(2,sayi2):
+            if(sayi1%i==0 and sayi2%i==0):
+                ebob=i
+        return ebob
+
+birinciSayi=int(input("1. Sayıyı Giriniz:\n"))
+ikinciSayi=int(input("2. Sayıyı Giriniz:\n"))
+
+print("{} sayısı ve {} sayısının ebobu {}'dir".format(birinciSayi,ikinciSayi,ebob(birinciSayi,ikinciSayi)))
