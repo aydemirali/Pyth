@@ -1,1 +1,28 @@
-Deneme
+print("******TC Kimlik No Doğrulama Programına Hoş geldiniz******")
+
+tc=list(input("Lütfen Doğrulamak İstediğiniz TC Kimlik Numarasını giriniz:\n"))
+
+for i in range(len(tc)):
+    tc[i]=int(tc[i])
+
+
+while True:
+    if len(tc)!=11:
+        print("TC Kimlik Numarası Sadece 11 Hane olabilir")
+        break
+    elif tc[0]==0:
+        print("TC Kimlik Numarasının İlk Hanesi 0 olamaz")
+        break
+    else:
+        top1=tc[0]+tc[2]+tc[4]+tc[6]+tc[8]
+        top2=tc[1]+tc[3]+tc[5]+tc[7]
+        onuncu=(top1*7-top2)%10
+        onbirinci=(top1+top2+onuncu)%10
+
+        if(tc[10]==onbirinci):
+            print("TC Kimlik No Doğru")
+            break
+        else:
+            print("TC Kimlik No Hatalı")
+            break
+
